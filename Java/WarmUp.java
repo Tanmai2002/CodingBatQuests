@@ -314,8 +314,62 @@ public boolean icyHot(int temp1, int temp2) {
 }
 
 
+///////////////     18   ///////////////////////
+/*
+Given 2 int values, return true if either of them is in the range 10..20 inclusive.
 
 
+in1020(12, 99) → true
+in1020(21, 12) → true
+in1020(8, 99) → false
+*/
+
+///////////////////////////////////////////////////////
+public boolean in1020(int a, int b) {
+  return i0(a) || i0(b);
+}
+public boolean i0(int a){
+  return (a>9 && a<21);
+}
+
+///////////////     19   ///////////////////////
+/*
+
+We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values, return true if 1 or more of them are teen.
+
+
+hasTeen(13, 20, 10) → true
+hasTeen(20, 19, 10) → true
+hasTeen(20, 10, 13) → true
+*/
+
+///////////////////////////////////////////////////////
+public boolean hasTeen(int a, int b, int c) {
+  return iT(a)||iT(b)||iT(c);
+}
+public boolean iT(int a){
+  return (a>12&& a<20);
+}
+
+///////////////     20   ///////////////////////
+/*
+
+
+We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values, return true if one or the other is teen, but not both.
+
+
+loneTeen(13, 99) → true
+loneTeen(21, 19) → true
+loneTeen(13, 13) → false
+*/
+
+///////////////////////////////////////////////////////
+public boolean loneTeen(int a, int b) {
+  return!((iT(a)&&iT(b)) || !(iT(a)||iT(b)));
+}
+public boolean iT(int a){
+  return (a>12&& a<20);
+}
 
 
 
