@@ -219,7 +219,7 @@ public String front3(String str) {
 }
 
 
-///////////////     12     ///////////////////////
+///////////////     13    ///////////////////////
 /*
 
 Given a string, take the last char and return a new string with 
@@ -237,6 +237,25 @@ public String backAround(String str) {
   char c=str.charAt(str.length()-1);
   return c+str+c;
 }
+
+
+///////////////     14   ///////////////////////
+/*
+
+
+Return true if the given non-negative number is a multiple of 3 or a multiple of 5. Use the % "mod" operator -- see Introduction to Mod
+
+
+or35(3) → true
+or35(10) → true
+or35(8) → false
+*/
+
+///////////////////////////////////////////////////////
+public boolean or35(int n) {
+  return ((n%3==0)|| (n%5==0));
+}
+
 
 
 
