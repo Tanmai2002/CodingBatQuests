@@ -393,4 +393,103 @@ if(str.charAt(1)=='d' &&str.charAt(2)=='e'&&str.charAt(3)=='l'){
   return str;
 }
 
+///////////////     22   ///////////////////////
+/*
+
+Given 2 int values, return whichever value is nearest to the value 10,
+or return 0 in the event of a tie. 
+Note that Math.abs(n) returns the absolute value of a number.
+
+
+close10(8, 13) → 8
+close10(13, 8) → 8
+close10(13, 7) → 0
+*/
+
+///////////////////////////////////////////////////////
+public int close10(int a, int b) {
+  int i=Math.abs(a-10);
+  int k= Math.abs(b-10);
+  if(i !=k)
+  return (i-k)>0?b:a;
+  return 0;
+}
+
+///////////////     23   ///////////////////////
+/*
+
+Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are both in the range 40..50 inclusive.
+
+
+in3050(30, 31) → true
+in3050(30, 41) → false
+*/
+
+///////////////////////////////////////////////////////
+public boolean in3050(int a, int b) {
+  return ((i3(a)&& i3(b))|| (i5(a)&& i5(b)));
+}
+
+public boolean i3(int a){
+  return (a>29 && a<41);
+}
+
+public boolean i5(int a){
+  return (a>39 && a<51);
+}
+
+///////////////     24   ///////////////////////
+/*
+
+Given 2 positive int values, return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range.
+
+
+max1020(11, 19) → 19
+max1020(19, 11) → 19
+max1020(11, 9) → 11
+*/
+
+///////////////////////////////////////////////////////
+public int max1020(int a, int b) {
+  if(i1(a) && i1(b)){
+    return a>b?a:b;
+  }
+  if(i1(a)||i1(b))
+  return i1(a)?a:b;
+
+  return 0;
+}
+
+
+public boolean i1(int a){
+  return (a>9 && a<21);
+}
+
+///////////////     25   ///////////////////////
+/*
+
+Return true if the given string contains between 1 and 3 'e' chars.
+
+
+stringE("Hello") → true
+stringE("Heelle") → true
+stringE("Heelele") → false
+*/
+
+///////////////////////////////////////////////////////
+public boolean stringE(String str) {
+  if(!str.contains("e"))
+  return false;
+  int i=0;
+  for (int k=0;k<str.length();k++){
+    if(str.charAt(k)=='e')
+      i++;
+  
+    
+    if(i>3)
+    return false;
+  }
+  return true;
+
+}
 
