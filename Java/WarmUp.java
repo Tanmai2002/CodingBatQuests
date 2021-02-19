@@ -493,3 +493,62 @@ public boolean stringE(String str) {
 
 }
 
+
+///////////////     26    ///////////////////////
+/*
+
+
+Given two non-negative int values, return true if they have the same last digit,
+such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+
+
+lastDigit(7, 17) → true
+lastDigit(6, 17) → false
+lastDigit(3, 113) → true
+*/
+
+///////////////////////////////////////////////////////
+public boolean lastDigit(int a, int b) {
+  return (a%10)==(b%10);
+}
+///////////////     27    ///////////////////////
+/*
+
+Given a string, return a new string where the last 3 chars are now in upper case. 
+If the string has less than 3 chars, uppercase whatever is there. Note that str.toUpperCase() returns the uppercase version of a string.
+
+
+endUp("Hello") → "HeLLO"
+endUp("hi there") → "hi thERE"
+endUp("hi") → "HI"
+*/
+
+///////////////////////////////////////////////////////
+public String endUp(String str) {
+  if(str.length()>3){
+    return str.substring(0,str.length()-3)+str.substring(str.length()-3).toUpperCase();
+  }
+  return str.toUpperCase();
+}
+///////////////     28    ///////////////////////
+/*
+
+
+Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
+
+
+everyNth("Miracle", 2) → "Mrce"
+everyNth("abcdefg", 2) → "aceg"
+everyNth("abcdefg", 3) → "adg"
+*/
+
+///////////////////////////////////////////////////////
+public String everyNth(String str, int n) {
+  String s="";
+  for(int i=0;i<str.length();i=i+n){
+    s+=str.charAt(i);
+  }
+  return s;
+}
+
+
