@@ -214,51 +214,53 @@ public String theEnd(String str, boolean front) {
   return front?str.charAt(0)+"":str.charAt(str.length()-1)+"";
 }
 
-////////////////////////    2     ///////////////////////
+////////////////////////    14     ///////////////////////
 /*
+Given a string, return a version without both the first and last char of the string. The string may be any length, including 0.
 
-Given two strings, a and b, return the result of putting them together in the order abba, e.g. "Hi" and "Bye" returns "HiByeByeHi".
 
-
-makeAbba("Hi", "Bye") → "HiByeByeHi"
-makeAbba("Yo", "Alice") → "YoAliceAliceYo"
-makeAbba("What", "Up") → "WhatUpUpWhat"
+withouEnd2("Hello") → "ell"
+withouEnd2("abc") → "b"
+withouEnd2("ab") → ""
 */
 //////////////////////////////////////////////////////////
-
-public String makeAbba(String a, String b) {
-  return a+b+b+a;
+public String withouEnd2(String str) {
+  if(str.length()<2) return "";
+  return str.substring(1,str.length()-1);
 }
-////////////////////////    2     ///////////////////////
+
+////////////////////////    15     ///////////////////////
 /*
 
-Given two strings, a and b, return the result of putting them together in the order abba, e.g. "Hi" and "Bye" returns "HiByeByeHi".
+Given a string of even length, return a string made of the middle two chars, so the string "string" yields "ri". The string length will be at least 2.
 
 
-makeAbba("Hi", "Bye") → "HiByeByeHi"
-makeAbba("Yo", "Alice") → "YoAliceAliceYo"
-makeAbba("What", "Up") → "WhatUpUpWhat"
+middleTwo("string") → "ri"
+middleTwo("code") → "od"
+middleTwo("Practice") → "ct"
 */
 //////////////////////////////////////////////////////////
-
-public String makeAbba(String a, String b) {
-  return a+b+b+a;
+public String middleTwo(String str) {
+  int n=str.length()/2-1;
+  return str.substring(n,n+2);
 }
-////////////////////////    2     ///////////////////////
+
+////////////////////////    16     ///////////////////////
 /*
 
-Given two strings, a and b, return the result of putting them together in the order abba, e.g. "Hi" and "Bye" returns "HiByeByeHi".
+Given a string, return true if it ends in "ly".
 
 
-makeAbba("Hi", "Bye") → "HiByeByeHi"
-makeAbba("Yo", "Alice") → "YoAliceAliceYo"
-makeAbba("What", "Up") → "WhatUpUpWhat"
+endsLy("oddly") → true
+endsLy("y") → false
+endsLy("oddy") → false
 */
 //////////////////////////////////////////////////////////
-
-public String makeAbba(String a, String b) {
-  return a+b+b+a;
+public boolean endsLy(String str) {
+  if(str.length()<2) return false;
+  return str.substring(str.length()-2).equals("ly");
 }
+
 ////////////////////////    2     ///////////////////////
 /*
 
